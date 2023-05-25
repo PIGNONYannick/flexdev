@@ -12,7 +12,7 @@ class Users extends BaseController
 
 
 		if ($this->request->getMethod() == 'post') {
-			//let's do the validation here
+			//validation
 			$rules = [
 				'email' => 'required|min_length[6]|max_length[50]|valid_email',
 				'password' => 'required|min_length[8]|max_length[255]|validateUser[email,password]',
@@ -33,7 +33,7 @@ class Users extends BaseController
 											->first();
 
 				$this->setUserSession($user);
-				//$session->setFlashdata('success', 'Successful Registration');
+				//$session->setFlashdata('success', 'Inscription validé');
 				return redirect()->to('dashboard');
 
 			}
@@ -62,7 +62,7 @@ class Users extends BaseController
 		helper(['form']);
 
 		if ($this->request->getMethod() == 'post') {
-			//let's do the validation here
+			//validation
 			$rules = [
 				'firstname' => 'required|min_length[3]|max_length[20]',
 				'lastname' => 'required|min_length[3]|max_length[20]',
@@ -103,7 +103,7 @@ class Users extends BaseController
 		$model = new UserModel();
 
 		if ($this->request->getMethod() == 'post') {
-			//let's do the validation here
+			//validation
 			$rules = [
 				'firstname' => 'required|min_length[3]|max_length[20]',
 				'lastname' => 'required|min_length[3]|max_length[20]',

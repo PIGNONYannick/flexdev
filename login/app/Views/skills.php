@@ -1,6 +1,6 @@
 <?php
-// Récupérer l'ID de l'utilisateur connecté (vous devez adapter cela à votre logique d'authentification)
-$idUtilisateur = 1; // Mettez ici la logique pour récupérer l'ID de l'utilisateur connecté
+// Récupérer l'ID de l'utilisateur connecté
+$idUtilisateur = 8; // Mettez ici la logique pour récupérer l'ID de l'utilisateur connecté
 
 // Connexion à la base de données
 $servername = "localhost";
@@ -76,7 +76,7 @@ if (isset($_POST['supprimer'])) {
     $sqlUpdate = "UPDATE users SET skill = '$skills' WHERE id = $idUtilisateur";
 
     if (mysqli_query($conn, $sqlUpdate)) {
-        echo "Skill supprimé avec succès.";
+        echo "Compétence supprimée avec succès.";
         // Rafraîchir les données de l'utilisateur
         $user['skill'] = $skills;
     } else {
@@ -95,7 +95,7 @@ mysqli_close($conn);
 <body>
     <h1>Bienvenue sur votre page personnelle, <?php echo $user['firstname']; ?></h1>
 
-    <h2>Vos skills :</h2>
+    <h2>Vos compétences :</h2>
     <?php if (!empty($user['skill'])): ?>
         <ul>
             <?php $skills = explode(', ', $user['skill']);
@@ -104,7 +104,7 @@ mysqli_close($conn);
             <?php endforeach; ?>
         </ul>
     <?php else: ?>
-        <p>Aucun skill enregistré.</p>
+        <p>Aucune compétences enregistré.</p>
     <?php endif; ?>
 
     <h2>Ajouter un skill :</h2>

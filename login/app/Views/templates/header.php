@@ -13,7 +13,7 @@
      ?>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container">
-      <a class="navbar-brand" href="/">Ci4 Login FlexDEV</a>
+      <a class="navbar-brand" href="/">Ci4 Login PROJET FlexDEV</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,7 +27,7 @@
             <a class="nav-link" href="/profile">Profile</a>
           </li>
           <li class="nav-item <?= ($uri->getSegment(1) == 'offre' ? 'active' : null) ?>">
-            <a class="nav-link" href="/profile">Offre emploi</a>
+            <a class="nav-link" href="/offre">Offre emploi</a>
           </li>
         </ul>
         <ul class="navbar-nav my-2 my-lg-0">
